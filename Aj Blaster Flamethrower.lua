@@ -113,6 +113,20 @@ spawn(function()
     _G.loop2 = false 
 end)
 
+local asdf = game:GetService("Players").LocalPlayer
+local characteeer = asdf.Character.iiAshleyX0
+
+local xd = characteeer["fff_fox"].Handle
+
+
+for i, v in pairs(xd:GetDescendants()) do
+  if v:IsA("Mesh") or v:IsA("SpecialMesh") or v:IsA("MeshPart") then
+      v:Destroy()
+      print("Mesh removed.")
+      
+end
+end
+
 local player=game:GetService("Players").LocalPlayer
 local char=game.Workspace.non
 local mouse=player:GetMouse()
@@ -754,9 +768,11 @@ end)
 game.Players.LocalPlayer.Character.HandleAccessory.Handle.AccessoryWeld:Destroy()
 game.Workspace.non.HandleAccessory.Handle.Anchored = true
 
-
+game.Players.LocalPlayer.Character.fff_fox.Handle.AccessoryWeld:Destroy()
+game.Workspace.non.fff_fox.Handle.Anchored = true
 
 while true do
+    game.Players.LocalPlayer.Character.fff_fox.Handle.CFrame = game.Players.LocalPlayer.Character[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame
     game.Players.LocalPlayer.Character.HandleAccessory.Handle.CFrame = game.Players.LocalPlayer.Character[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame
     task.wait()
 end
